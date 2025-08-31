@@ -27,7 +27,7 @@ export async function generatePrompt(data: updateData) {
     **Required Output Structure & Content (Strictly Plain Text):**
     Your final output must be a single, direct, and actionable prompt.
 
-    1.  **Opening Directive:** Start with "Create a 16:9 cinematic thumbnail for..." and state the core theme (e.g., "a jungle adventure vlog").
+    1.  **Opening Directive:** Start with "Create a 9:16 cinematic thumbnail for..." and state the core theme (e.g., "a jungle adventure vlog").
 
     2.  **Scene & Background:** Describe the new environment in detail.
         -   **Environment:** Specify the setting (e.g., "a dense, misty jungle at dawn," "a futuristic neon-lit city street").
@@ -47,7 +47,7 @@ export async function generatePrompt(data: updateData) {
         -   **Color Grade:** "Apply a cinematic color grade over the entire image, emphasizing deep greens and warm, golden highlights to create a high-contrast, adventurous feel."
         -   **Vignette:** "Add a subtle, dark vignette to frame the scene and draw focus to the center."
 
-    **Final Instruction:** The output MUST be a single block of plain text. No explanations, disclaimers, or conversational filler.
+    **Final Instruction:** The output MUST be a single block of plain text. No explanations, disclaimers, or conversational filler and make sure the image should be in 9:16 dimension.
   `;
 
   try {
@@ -58,7 +58,7 @@ export async function generatePrompt(data: updateData) {
         {
           role: "user",
           content: `
-            Generate a creative brief for a thumbnail based on the following details. Adhere strictly to all instructions and the required structure in the system prompt. The output must be a single, direct, plain-text prompt.
+            Generate a creative brief for a thumbnail based on the following details. Adhere strictly to all instructions and the required structure in the system prompt. The output must be a single, direct, plain-text prompt and make sure the image dimension should be 9:16.
 
             - Title: ${data.title}
             - Description: ${data.description}
